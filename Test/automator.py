@@ -7,21 +7,24 @@ import tkinter as tk
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
-driver = webdriver.Firefox('C:\drivers\geckodriver.exe')
+# driver = webdriver.Firefox('C:\Drivers\geckodriver.exe')
 #
 def runner():
-   driver = webdriver.Chrome('C:\drivers\chromedriver.exe')
+   # driver = webdriver.Chrome('C:\drivers\chromedriver.exe')
+   path = "C:\Drivers\chromedriver.exe"
+   driver = webdriver.Chrome(path)
    driver.set_page_load_timeout("10")
 
 # Download geckodriver or chromedriver
    driver.get("https://cc-lp5cas-vm.berea.edu/cas-web/login?service=https%3A%2F%2Flp5portal.berea.edu%2Fc%2Fportal%2Flogin")
-   driver.find_element_by_name("username").send_keys("efwefwe")
-   driver.find_element_by_name("password").send_keys("!")
+   driver.find_element_by_name("username").send_keys("christsona")
+   driver.find_element_by_name("password").send_keys("Modza?6612")
    driver.find_element_by_name("submit_form").click()
    time.sleep(1)
    driver.find_element_by_partial_link_text("Academics").click()
    time.sleep(1)
-   driver.find_element_by_partial_link_text("Add or Drop Classes").click()
+   # driver.find_element_by_partial_link_text("Add or Drop Classes").click()
+   driver.find_element_by_partial_link_text("Degree Works (Degree Audit)").click()
    time.sleep(1)
    # driver.find_element_by_partial_link_text("Summer 2019").click()
    driver.switch_to.window(driver.window_handles[1])
@@ -39,7 +42,7 @@ def runner():
        .key_down(Keys.TAB) \
        .send_keys("00000") \
        .perform()
-   driver.find_element_by_xpath(“/html/body/div[3]/form/input[19]”).click()
+   driver.find_element_by_xpath("/html/body/div[3]/form/input[19]").click()
 
    time.sleep(30)
 # driver.find_element_by_name("pin").send_keys("837192")
